@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<script>
+	function validateForm() {
+		if (document.frm.brand.value == "") {
+			alert("Brand should not be blank.");
+			document.frm.brand.focus();
+			return false;
+		} else if (document.frm.color.value == "") {
+			alert("Color should not be blank");
+			document.frm.color.focus();
+			return false;
+		}
+	}
+</script>
+
+<title>Lawnmowers</title>
+</head>
+<body>
+
+	<form name="frm" action="addItemServlet" method="post"
+		onSubmit="return validateForm()">
+
+			Enter brand</td>
+			<input type="text" name="brand">
+			Enter color
+			<input type="text" name="color">
+			<input type="submit" value="Add Item">
+			<br />
+			<a href="viewAllListsServlet">View all clients lists</a>
+			<br />
+			<a href="addItemsForListServlet">Create a new list</a>
+	</form>
+</body>
+</html>
